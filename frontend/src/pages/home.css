@@ -1,0 +1,17 @@
+
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid #fff; /* cursor */
+  animation: typing 4s steps(400, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 33ch; } /* adjust to sentence length */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+  100% { border-color: #fff; }
+}

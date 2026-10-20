@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>order#Invoice</title>
+    <link rel="stylesheet" href="{% static '../static/css/style.css' %}" />
+  </head>
+  <body>
+    <div>
+      <h1>INVOICE</h1>
+      <h3>ORDER NUMBER : {{order.order_number}}</h3>
+      <h4 class="order_date">ORDER DATE : {{order.created_at}}</h4>
+
+      <div class="details-box">
+        <div class="title">
+          <p>-- Customer Details --</p>
+          <p>First Name : {{order.user.firstname}}</p>
+          <p>Last Name : {{order.user.lastname}}</p>
+          <p>Email : {{order.user.email}}</p>
+          <p>Phone : {{order.user.phone}}</p>
+          <p>Gender : {{order.user.gender}}</p>
+        </div>
+        <div>
+          <p>-- Delivery Address --</p>
+          <p>Locality Area 01 : {{order.locality_area_01}}</p>
+          <p>Locality Area 02 : {{order.locality_area_02}}</p>
+          <p>Landmark Area : {{order.landmark}}</p>
+          <p>City : {{order.city}}</p>
+          <p>District : {{order.district}}</p>
+          <p>State : {{order.state}}</p>
+          <p>Pincode : {{order.user.pincode}}</p>
+        </div>
+      </div>
+
+      <div class="details-box">
+        <div class="">
+          <p>Payment Method : {{order.payment_option}}</p>
+          <p>Card Number : {{order.card_number}}</p>
+          <p>Expiry Date : {{order.expiry_date}}</p>
+          <p>CVV : {{order.cvv}}</p>
+        </div>
+      </div>
+
+      <div>s
+        <table class="invoice-table">
+          <tr class="data">
+            <th>Sl No</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Order Number</th>
+            <th>Total Amount</th>
+          </tr>
+          {% for item in orderItems %}
+
+          <tr class="">
+            <td>{{forloop.counter}}</td>
+            <td>{{item.food.food_name}}</td>
+            <td>{{item.order_quantity}}</td>
+            <td>{{item.food.food_price}}</td>
+            <td>{{item.order.order_number}}</td>
+            <td>{{item.total_amount}}</td>
+          </tr>
+
+          {% endfor %}
+        </table>
+        <h5 class="grand-total"><strong>Grand Total:</strong> {{order.total_amount}}</h5>
+      </div>
+    </div>
+    <div>
+        <button onclick="window.print()" class="print_button">Print</button>
+    </div>
+  </body>
+</html>
