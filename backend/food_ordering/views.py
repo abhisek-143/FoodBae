@@ -122,12 +122,31 @@ def Auth_User_Register_View(request):
 def Auth_User_Login_View(request):
     emailorphone = request.data.get("emailorphone")
     password = request.data.get("password")
-    user = User.objects.get(Q(email=emailorphone )| Q(phone=emailorphone))
-    
-    if check_password(password,user.password):
-        return Response({"message":"User LoggedIn Successfully!","userId":user.id,"name":f"{user.firstname}"},status=status.HTTP_200_OK)
-    return Response({"message":"Invalid Credentials!"},status=status.HTTP_401_UNAUTHORIZED)
 
+    try:
+        user = User.objects.get(
+            Q(email=emailorphone) | Q(phone=emailorphone)
+        )
+    except User.DoesNotExist:
+        return Response(
+            {"message": "User does not exist!"},
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+    if check_password(password, user.password):
+        return Response(
+            {
+                "message": "User LoggedIn Successfully!",
+                "userId": user.id,
+                "name": user.firstname,
+            },
+            status=status.HTTP_200_OK,
+        )
+
+    return Response(
+        {"message": "Invalid Credentials!"},
+        status=status.HTTP_401_UNAUTHORIZED,
+    )
 import random
 @api_view(["GET"])
 def Top_Rated_Foods_View(request):
