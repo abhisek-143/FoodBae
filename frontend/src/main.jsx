@@ -8,9 +8,9 @@ import Stair from "./components/Stair.jsx";
 createRoot(document.getElementById("root")).render(
   <UserProvider>
     <BrowserRouter>
-      {/* <Stair> */}
+      <Stair>
         <App />
-      {/* </Stair> */}
+      </Stair>
     </BrowserRouter>
   </UserProvider>,
 );

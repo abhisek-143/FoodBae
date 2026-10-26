@@ -91,7 +91,7 @@ const Home = () => {
           <div className=" h-60 md:h-100 lg:ps-25 ps-15 md:ps-22">
             <img
               ref={burgerRef}
-              src="/burger3.png"
+              src="/public/burger3.png"
               className=" bg-cover bg-center object-cover md:h-65 lg:h-100 md:mt-10 h-full"
               alt="food image"
             />
@@ -150,7 +150,7 @@ const Home = () => {
             </div>
             {/* <IoFastFood size={18} lg:size={27} className="m-1 mt-1" /> */}
           </div>
-          <div className="bg-black md:p-5 w-full grid grid-cols-2 gap-1 lg:grid-cols-5 md:grid-cols-3 ">
+          <div className="bg-black md:p-5 w-full grid grid-cols-2 gap-2 lg:grid-cols-5 md:grid-cols-3 ">
             {foods?.map((items) => {
               return <Foodcard key={items.id} item={items} />;
             })}
