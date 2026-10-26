@@ -26,9 +26,7 @@ SECRET_KEY = 'django-insecure-8@88mrmnp9z-f0l#&pm(jxdf#!v+&zctjdi_c22w$@zp3bg^+q
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://foodbae-backend-yyha.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    "foodbae-backend-yyha.onrender.com",
 ]
 
 
