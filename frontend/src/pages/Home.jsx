@@ -91,7 +91,7 @@ const Home = () => {
           <div className=" h-60 md:h-100 lg:ps-25 ps-15 md:ps-22">
             <img
               ref={burgerRef}
-              src="/public/burger3.png"
+              src="/burger3.png"
               className=" bg-cover bg-center object-cover md:h-65 lg:h-100 md:mt-10 h-full"
               alt="food image"
             />
