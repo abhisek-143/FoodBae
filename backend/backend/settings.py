@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "foodbae-backend-yyha.onrender.com",
-    "localhost:517",
+    "localhost",
+    "127.0.0.1",
 ]
 
 
