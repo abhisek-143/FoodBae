@@ -216,7 +216,7 @@ const Admindashboard = () => {
           <h1 className="font-bold py-2 md:py-4 lg:ms-5 lg:pt-0 text-xl md:text-2xl lg:text-3xl"># DASHBOARD </h1>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3  md:gap-2 lg:min-w-280 md:min-w-2xl text-gray-200">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3  md:gap-2 lg:min-w-7xl md:min-w-2xl text-gray-200">
           {data.map((item) => {
             return (
               <div

@@ -50,7 +50,7 @@ const Home = () => {
 
   return (
     <Userlayout>
-      <main className="">
+      <main className="min-h-screen">
         {/* section 1 ...implementing search food   */}
         <section className="grid md:grid-cols-2 grid-cols-1 lg:ps-30 md:max-h-110 w-full items-center ps-3 pt-10 md:pt-3 md:p-20 md:ps-10">
           <div className="md:mt-40 ">
