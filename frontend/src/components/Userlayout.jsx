@@ -176,7 +176,7 @@ const Userlayout = ({ children }) => {
                 </Link>
               </li>
               <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
-                <Link to="/login">Menu</Link>
+                <Link to="/user/food-menu">Menu</Link>
               </li>
 
               <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
