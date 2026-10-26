@@ -1,4 +1,4 @@
 .login-form{
-    background-image: url("../public/background_image_01.jpg");
+    background-image: url("/background_image_01.jpg");
     background-size: cover;
 }
