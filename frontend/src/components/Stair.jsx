@@ -15,8 +15,7 @@ const Stair = ({ children }) => {
 
   useGSAP(
     () => {
-
-        setIs_animate(true)
+      setIs_animate(true);
       const t1 = gsap.timeline();
 
       t1.set(parentRef, {
@@ -46,11 +45,11 @@ const Stair = ({ children }) => {
 
       gsap.from(appref.current, {
         opacity: 0,
-        duration:1,
-        delay:0.7,
-        scale:1.1
+        duration: 1,
+        delay: 0.7,
+        scale: 1.1,
       });
-      setIs_animate(false)
+      setIs_animate(false);
 
       return () => {
         t1.kill();
@@ -74,11 +73,13 @@ const Stair = ({ children }) => {
           <div className="h-screen stair w-1/6 bg-black"></div>
           <div className="h-screen stair w-1/6 bg-black"></div>
           <div className="h-screen stair w-1/6 bg-black"></div>
-                    <div className="h-screen stair w-1/6 bg-black"></div>
-
+          <div className="h-screen stair w-1/6 bg-black"></div>
         </div>
       </div>
-      <div ref={appref} className=""> {children}</div>
+      <div ref={appref} className="">
+        {" "}
+        {children}
+      </div>
     </>
   );
 };

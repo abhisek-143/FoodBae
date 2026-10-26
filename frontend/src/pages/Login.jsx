@@ -37,7 +37,7 @@ const Login = () => {
                 toast.success(data.message)
 
         localStorage.setItem("adminId",data.id)
-        localStorage.setItem("username",data.username)
+        localStorage.setItem("adminname",data.username)
         setTimeout(() => {
             navigate("/admindashboard");
           

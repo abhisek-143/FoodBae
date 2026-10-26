@@ -22,7 +22,7 @@ import { MdOutlineManageSearch } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io"
 
 const Adminlayout = ({ children }) => {
-  const username = localStorage.getItem("username");
+  const adminname = localStorage.getItem("adminname");
   const [menu, setMenu] = useState({
     food_category: false,
     food_menu: false,
@@ -59,7 +59,7 @@ const Adminlayout = ({ children }) => {
   // logout logic....
   const logoutHandler = () => {
     localStorage.removeItem("adminId");
-    localStorage.removeItem("username");
+    localStorage.removeItem("adminname");
     navigate("/user-login");
   };
 
@@ -88,13 +88,13 @@ const Adminlayout = ({ children }) => {
           ƒσσ∂вαє
         </h1>
         <div className="ml-auto flex items-center justify-end gap-3 sm:gap-4">
-          {username && (
+          {adminname && (
             <div className="flex items-center">
               <ul className="lg:flex gap-7  font-semibold text-yellow-400 hidden me-3 ">
 
                 <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/login" className="flex">
-                    {username && <p>welcome {username}</p>}
+                    {adminname && <p>welcome {adminname}</p>}
                   </Link>
                 </li>
               </ul>

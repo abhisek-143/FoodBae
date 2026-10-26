@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { LuMenu } from "react-icons/lu";
 import { IoMdNotifications } from "react-icons/io";
@@ -10,18 +10,21 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { FaPhoneAlt } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { IoMdSettings } from "react-icons/io";
 import { UserContext } from "./UserContext";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Userlayout = ({ children }) => {
   const username = localStorage.getItem("username");
   const { cartCount, setCartCount } = useContext(UserContext);
-  const {wishlistCount,setWishlistCount} = useContext(UserContext)
+  const { wishlistCount, setWishlistCount } = useContext(UserContext);
+
+  const parentSideBarRef = useRef(null);
+  const childSideBarRef = useRef(null);
+  const profileBarRef = useRef(null);
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [profileBarOpen, setProfileBarOpen] = useState(false);
@@ -56,8 +59,50 @@ const Userlayout = ({ children }) => {
     navigate("/user-login");
   };
 
+  //GSAP animation
+  useGSAP(
+    () => {
+      //profile bar animation
+      if (profileBarOpen) {
+        gsap.from(profileBarRef.current, {
+          height: "0%",
+          duration: 0.5,
+          opacity: 0,
+          scale: 0.6,
+        });
+      }
+      //leftsidebar animation
+      if (!parentSideBarRef.current) return;
+
+      if (!profileBarOpen) {
+        const t1 = gsap.timeline();
+        if (sidebarOpen && isOpen) {
+          t1.from(parentSideBarRef.current, {
+            x: -100,
+            duration: 0.3,
+            delay: 0.1,
+          });
+        }
+
+        t1.from(childSideBarRef.current, {
+          y: -100,
+          opacity: 0,
+          duration: 0.3,
+          scale: 0.6,
+        });
+      }
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [sidebarOpen, isOpen, profileBarOpen],
+    },
+  );
+
+
+
+
   return (
-    <div className=" w-full bg-black text-white">
+    <div className="w-full max-w-full bg-black text-white">
       {/* Navbar section... */}
       <header className="w-full min-h-16 flex items-center bg-black text-white px-3 sm:px-5 shadow-2xl shadow-amber-200">
         <button
@@ -93,8 +138,7 @@ const Userlayout = ({ children }) => {
                   <Link to="/user/food/wishlist" className="flex">
                     Wishlist
                     <TiHeart size={23} className="ms-1" />
-                                        {wishlistCount > 0 &&<p className="">({wishlistCount})</p>}
-
+                    {wishlistCount > 0 && <p className="">({wishlistCount})</p>}
                   </Link>
                 </li>
 
@@ -102,24 +146,25 @@ const Userlayout = ({ children }) => {
                   <Link to="/user/food/cart" className="flex">
                     Cart
                     <MdOutlineShoppingCart size={23} className="ms-1" />
-                    {cartCount > 0 &&<p className="">({cartCount})</p>}
+                    {cartCount > 0 && <p className="">({cartCount})</p>}
                   </Link>
                 </li>
                 <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
-                  <Link to="/login" className="flex">
+                  <Link to="#" className="flex">
                     {username && <p>welcome {username}</p>}
                   </Link>
                 </li>
               </ul>
 
-              <div
+              <button
+                disabled={sidebarOpen && isOpen ? true : false}
                 onClick={() => {
                   setProfileBarOpen(!profileBarOpen);
                 }}
                 className="mx-2 rounded-full border-2 cursor-pointer text-yellow-400 hover:text-white active:scale-95 p-2"
               >
-                <FaUserAlt size={18} className="" />
-              </div>
+                <FaUserAlt className="text-lg mg:text-xl" />
+              </button>
             </div>
           ) : (
             <ul className="lg:flex hidden gap-7 cursor-pointer active:scale-95 font-semibold text-yellow-400">
@@ -148,7 +193,10 @@ const Userlayout = ({ children }) => {
       </header>
 
       {profileBarOpen && (
-        <div className="border border-t-0 bg-black font-semibold rounded-b-xl p-4 absolute right-0">
+        <div
+          ref={profileBarRef}
+          className={`border border-t-0 bg-black font-semibold rounded-b-xl p-4 absolute ${sidebarOpen && isOpen ? "hidden" : "block"} right-0`}
+        >
           <ul className="text-sm text-yellow-400 ">
             <li className="hover:relative bottom-0.5 py-1 cursor-pointer active:scale-95 hover:text-white">
               <Link className="flex">
@@ -178,33 +226,39 @@ const Userlayout = ({ children }) => {
         </div>
       )}
 
-      {sidebarOpen & isOpen ? (
+      {sidebarOpen && isOpen ? (
         // left side bar section
-        <section className="flex">
-          <div className="h-screen rounded-e-xl p-5 max-w-60 md:min-w-80 w-full border text-yellow-400 font-bold bg-gray-800">
+        <section className="grid grid-cols-2 border-e h-screen w-full">
+          <div
+            ref={parentSideBarRef}
+            className="h-screen  p-5 bg-transparent-50 max-w-60 md:min-w-80 text-yellow-400 font-bold"
+          >
             {username ? (
-              <ul className="lg:flex gap-7 flex-col font-semibold text-yellow-400 me-3 ">
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
-                  <Link className="flex" to="/">
+              <ul
+                className="lg:flex  flex-col font-semibold text-yellow-400 me-3 "
+                ref={childSideBarRef}
+              >
+                <li className="hover:relative mb-1 sidebar_element bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                  <Link className="flex sidebar_element" to="/">
                     Home
                   </Link>
                 </li>
 
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative mb-1 sidebar_element bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/user/food-menu/">Menu</Link>
                 </li>
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white ">
+                <li className="hover:relative bottom-0.5 mb-1 sidebar_element cursor-pointer active:scale-95 hover:text-white ">
                   <Link to="/user/orders/order-lists">My Orders</Link>
                 </li>
 
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative bottom-0.5 mb-1 sidebar_element cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/user/food/wishlist" className="flex">
                     Wishlist
                     <TiHeart size={23} className="ms-1" />
                   </Link>
                 </li>
 
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative bottom-0.5 mb-1 sidebar_element cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/user/food/cart" className="flex">
                     Cart
                     <MdOutlineShoppingCart size={23} className="ms-1" />
@@ -212,37 +266,40 @@ const Userlayout = ({ children }) => {
                 </li>
               </ul>
             ) : (
-              <ul className="lg:flex flex-col gap-7 cursor-pointer active:scale-95 font-semibold text-yellow-400">
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+              <ul
+                ref={childSideBarRef}
+                className="lg:flex flex-col gap-7 cursor-pointer active:scale-95 font-semibold text-yellow-400"
+              >
+                <li className="hover:relative bottom-0.5 mb-1 sidebar_element cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/login" className="flex">
                     <FaUser className="mt-1 me-0.5" size={14} />
                     Admin
                   </Link>
                 </li>
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative bottom-0.5 mb-1 sidebar_element cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/login">Menu</Link>
                 </li>
 
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative bottom-0.5 sidebar_element mb-1 cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/user-register">Register</Link>
                 </li>
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative bottom-0.5 sidebar_element mb-1 cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/user-login">Login</Link>
                 </li>
-                <li className="hover:relative bottom-0.5 cursor-pointer active:scale-95 hover:text-white">
+                <li className="hover:relative bottom-0.5 sidebar_element mb-1 cursor-pointer active:scale-95 hover:text-white">
                   <Link to="/user-login">FAQ?</Link>
                 </li>
               </ul>
             )}
           </div>
-          <button onClick={onclose} className="border w-full h-screen"></button>
+          <button onClick={onclose} className="h-screen"></button>
         </section>
       ) : (
         <section className="lg:min-h-110">{children}</section>
       )}
       {/* footer section */}
       <footer className="bg-gray-800 text-white pt-8 ">
-        <div className=" mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-3">About Us</h3>
             <p>
@@ -279,16 +336,16 @@ const Userlayout = ({ children }) => {
             <h3 className="text-xl font-bold mb-3">Follow Us</h3>
             <div className="flex space-x-4 text-xl">
               <a href="#">
-                <FaInstagram className=""/>
+                <FaInstagram className="" />
               </a>
               <a href="#">
-                <FaTwitter/>
+                <FaTwitter />
               </a>
               <a href="#">
-                <FaFacebook/>
+                <FaFacebook />
               </a>
               <a href="#">
-                <FaYoutube/>
+                <FaYoutube />
               </a>
             </div>
           </div>

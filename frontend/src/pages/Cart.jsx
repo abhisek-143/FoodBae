@@ -16,11 +16,17 @@ const Cart = () => {
   const navigate = useNavigate();
   const [totalAmount, setTotalAmount] = useState(0);
   const [deletation, setDeletation] = useState(false);
+  const userId = localStorage.getItem("userId")
     const { cartCount, setCartCount } = useContext(UserContext);
   
 
   //fetching cart items in the Cart...
   useEffect(() => {
+    if(!userId){
+      navigate("/user-login")
+    }
+
+
     fetch(`${BASE_URL}/api/user/cart/`)
       .then((res) => res.json())
       .then((data) => {

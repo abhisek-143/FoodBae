@@ -8,10 +8,16 @@ const Orderlist = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const navigate = useNavigate();
+    const userId = localStorage.getItem("userId")
+
 
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
+        if(!userId){
+      navigate("/user-login")
+    }
+
     fetch(`${BASE_URL}/api/user/orders/orderlists/`)
       .then((res) => res.json())
       .then((data) => {

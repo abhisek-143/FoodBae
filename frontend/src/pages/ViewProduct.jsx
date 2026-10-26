@@ -115,7 +115,7 @@ const ViewProduct = () => {
         </div>
       ) : (
         <>
-          {" "}
+        <div className="">         
           <button
             onClick={() => {
               navigate("/");
@@ -125,7 +125,7 @@ const ViewProduct = () => {
             <MdKeyboardBackspace className="m-1" size={18} />
             Back
           </button>
-          <div className="flex justify-center items-center min-h-140 p-8">
+          <div className="flex justify-center items-center min-h-60 md:min-h-120 lg:min-h-140 p-4 lg:p-8">
             <ToastContainer autoClose={2000} position="top-center" />
             <div className=" border grid grid-cols-2 h-60 md:min-w-160 lg:h-80 rounded-xl p-2 shadow-lg shadow-amber-400">
               <div className="">
@@ -164,7 +164,7 @@ const ViewProduct = () => {
                     <IoStarSharp />
                     <IoStarSharp />
                   </div>
-                  <div className="flex font-bold text-md lg:text-lg mt-4 lg:mt-4 gap-1">
+                  <div className="flex font-bold text-sm mb-4 lg:mb-0 lg:text-lg mt-4 gap-1">
                     Quantity :{" "}
                     {quantity > 1 ? (
                       <button onClick={() => setQuantity(quantity - 1)}>
@@ -184,7 +184,7 @@ const ViewProduct = () => {
                       <FaPlus size={14} className=" border rounded" />
                     </button>
                   </div>
-                  <div className="lg:my-4">
+                  <div className="my-2 lg:my-4">
                     <span className=" rounded-full text-md lg:text-lg font-bold flex mb-2">
                       <MdOutlineCurrencyRupee className="mt-1" size={15} />
                       {foodItem.food_price}
@@ -203,15 +203,15 @@ const ViewProduct = () => {
               </div>
             </div>
           </div>
-          <div className="p-5">
-            <div className=" py-4 ">
+          <div className="py-2 lg:p-5">
+            <div className=" lg:py-4 ">
               <span className="font-bold underline text-md text-yellow-400 md:text-2xl lg:text-3xl flex px-6 py-1 rounded-xl">
                 #Food Item{""} Details :
               </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3">
-              <div className="lg:col-span-1 me-10">
+              <div className="lg:col-span-1 me-10 ">
                 <div className="flex gap-2 ms-7 mt-3">
                   <label>Food name :</label>
                   <p>{foodItem.food_name}</p>
@@ -237,9 +237,9 @@ const ViewProduct = () => {
                   <p></p>
                 </div>
 
-                <div className="m-7">
+                <div className="m-5 w-full lg:m-7">
                   <span className="font-bold text-md mb-2 md:text-2xl lg:text-xl text-yellow-400 flex px-2 py-1 rounded-xl">
-                    Write a review <FaPen className="text-sm mt-2 ms-2"/>
+                    Write a review <FaPen className="text-sm mt-2 ms-2" />
                   </span>
 
                   <textarea
@@ -266,99 +266,125 @@ const ViewProduct = () => {
                       );
                     })}
                   </div>
-                                  <button className="px-4 w-full py-2 rounded-xl border bg-red-600 text-white inline-block">Submit</button>
-
+                  <button className="px-4 w-full py-2 rounded-xl bg-red-700 text-white inline-block">
+                    Submit
+                  </button>
                 </div>
               </div>
 
-              <div className="border rounded-xl p-5 lg:col-span-2 lg:max-h-133 overflow-auto my-5 me-10 bg-gray-300 text-black ">
-                                  <span className="font-bold text-md mb-2 md:text-2xl lg:text-2xl flex px-2 py-1 rounded-xl">
-                    Customers reviews <FaPen className="text-sm mt-2 ms-2"/>
-                  </span>
+              <div className="border py-4 md:rounded-xl scrollbar-none lg:p-5 lg:col-span-2 lg:max-h-133 overflow-y-auto my-5  bg-gray-300 text-black ">
+                <span className="font-bold text-xl mb-2 md:text-2xl lg:text-2xl flex px-3 pt-3 rounded-xl">
+                  Customers reviews <FaPen className="text-sm mt-2 ms-2" />
+                </span>
 
-                      <div className="">
-                                           <label className="font-extrabold mb-3 text-lg mx-4 ms-4">Total Reviews (515)</label>
- 
-                                          <div className="mx-4 flex flex-col gap-2">
+                <div className="">
+                  <label className=" mb-3 text-lg mx-4 ms-4">
+                    Total Reviews (515)
+                  </label>
+
+                  <div className="mx-4  flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
                   <div className="mx-4 flex flex-col gap-2">
                     <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
+                    <p className="border rounded-lg p-3 bg-gray-200">
+                      delicious food...taste was amazing....everyone go for
+                      it...
+                    </p>
                   </div>
-                  <div className="mx-4 flex flex-col gap-2">
-                    <label className="font-bold ms-2">User01</label>
-                    <p className="border rounded-lg p-3 bg-gray-200">delicious food...taste was amazing....everyone go for it...</p>
-
-                  </div>
-
-                      </div>
+                </div>
               </div>
             </div>
           </div>
+</div>
         </>
       )}
     </Userlayout>

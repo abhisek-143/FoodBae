@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Userlayout from "../components/Userlayout";
 import { FaSearch } from "react-icons/fa";
 import "./home.css";
 import { BsEmojiSmileUpsideDown } from "react-icons/bs";
 import Foodcard from "../components/Foodcard";
 import { IoFastFood } from "react-icons/io5";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Home = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const [foods, setFoods] = useState([]);
+  const burgerRef = useRef(null);
+  const topFoodRef = useRef(null);
 
   //Top rated food of the week ....fetching data
   useEffect(() => {
@@ -22,12 +26,31 @@ const Home = () => {
       });
   }, []);
 
+  //gsap animation
+  useGSAP(() => {
+    const t1 = gsap.timeline({
+      repeat: -1,
+    });
+    //burger image animation
+    t1.to(burgerRef.current, {
+      rotate: -360,
+      duration: 5,
+      x: 90,
+      scale: 0.5,
+      delay: 0.2,
+    });
+    t1.to(burgerRef.current, {
+      rotate: 360,
+      duration: 5,
+      x: 0,
+      scale: 1,
+    });
+
+  }, []);
 
   return (
     <Userlayout>
       <main className="">
-
-
         {/* section 1 ...implementing search food   */}
         <section className="grid md:grid-cols-2 grid-cols-1 lg:ps-30 md:max-h-110 w-full items-center ps-3 pt-10 md:pt-3 md:p-20 md:ps-10">
           <div className="md:mt-40 ">
@@ -65,8 +88,9 @@ const Home = () => {
             </div>
           </div>
 
-          <div className=" h-60 md:h-100 ps-25 md:ps-22">
+          <div className=" h-60 md:h-100 lg:ps-25 ps-15 md:ps-22">
             <img
+              ref={burgerRef}
               src="public/burger3.png"
               className=" bg-cover bg-center object-cover md:h-65 lg:h-100 md:mt-10 h-full"
               alt="food image"
@@ -96,7 +120,6 @@ const Home = () => {
                 dishes that delight your senses.
               </p>
 
-
               <p className=" mt-4">
                 Don’t miss our seasonal delights and exclusive combos designed
                 to make your dining experience unforgettable.
@@ -117,13 +140,15 @@ const Home = () => {
           </div>
         </section>
         {/* section 3... implementing top rated foods of the week... */}
-        <section className="bg-black text-white mt-20 md:m-4 ms-2">
-          <div className="flex justify-center items-center py-4 ">
-            <span className="font-bold text-md md:text-3xl flex bg-red-500  px-6 py-2 rounded-xl">
-              Top Rated Foods{" "}
-              <IoFastFood size={18} lg:size={27} className="m-1 mt-1" />
-              Of The Week
-            </span>
+        <section className="bg-black text-white grid grid-cols-1 mt-20 md:m-4 ms-2">
+          <div className=" font-bold bg-red-600 w-full text-xl lg:text-3xl py-4 ">
+            <div
+              ref={topFoodRef}
+              className="flex overflow-clip justify-center items-center"
+            >
+              <p>TOP RATED FOODS OF THE MONTH</p>
+            </div>
+            {/* <IoFastFood size={18} lg:size={27} className="m-1 mt-1" /> */}
           </div>
           <div className="bg-black md:p-5 w-full grid grid-cols-2 gap-1 lg:grid-cols-5 md:grid-cols-3 ">
             {foods?.map((items) => {
