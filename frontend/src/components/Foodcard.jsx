@@ -20,7 +20,7 @@ const Foodcard = ({ item }) => {
       <div className=" w-45 md:w-55 lg:w-77 rounded shadow-2xl bg-white">
         <img
           className="w-45 md:w-55 lg:w-77 rounded-xl bg-cover bg-center rounded-t-sm h-35 md:h-60"
-          src={`${BASE_URL}/${item.food_image}`}
+          src={`${BASE_URL}/media/${item.food_image}`}
           alt="Card image"
         />
         <div className="p-2  md:px-2 md:py-2">
