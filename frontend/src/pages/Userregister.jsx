@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Userregister = () => {
         const BASE_URL = import.meta.env.VITE_BASE_URL;
         const navigate = useNavigate();
+        console.log("base url",BASE_URL)
 
   const [formdata, setformdata] = useState({
     firstname : "",
