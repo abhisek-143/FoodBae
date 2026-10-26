@@ -27,7 +27,7 @@ const Stair = ({ children }) => {
         height: 0,
         duration: 0.5,
         stagger: {
-          amount: -0.5,
+          amount: -0.2,
         },
       });
       t1.to(".stair", {
@@ -69,11 +69,11 @@ const Stair = ({ children }) => {
       >
         <div className="flex w-full h-full ">
           <div className="h-screen stair w-1/6 bg-black"></div>
+          <div className="h-screen stair w-1/6 bg-white"></div>
           <div className="h-screen stair w-1/6 bg-black"></div>
+          <div className="h-screen stair w-1/6 bg-white"></div>
           <div className="h-screen stair w-1/6 bg-black"></div>
-          <div className="h-screen stair w-1/6 bg-black"></div>
-          <div className="h-screen stair w-1/6 bg-black"></div>
-          <div className="h-screen stair w-1/6 bg-black"></div>
+          <div className="h-screen stair w-1/6 bg-white"></div>
         </div>
       </div>
       <div ref={appref} className="">
