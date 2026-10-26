@@ -16,6 +16,8 @@ import { IoMdSettings } from "react-icons/io";
 import { UserContext } from "./UserContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+gsap.registerPlugin(useGSAP);
+
 
 const Userlayout = ({ children }) => {
   const username = localStorage.getItem("username");

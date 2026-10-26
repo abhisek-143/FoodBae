@@ -7,6 +7,8 @@ import Foodcard from "../components/Foodcard";
 import { IoFastFood } from "react-icons/io5";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+gsap.registerPlugin(useGSAP);
+
 
 const Home = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL;

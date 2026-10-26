@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { TbQrcode } from "react-icons/tb";
 import { useLocation } from "react-router-dom";
 
+gsap.registerPlugin(useGSAP);
 
 const Stair = ({ children }) => {
   const parentRef = useRef(null);
