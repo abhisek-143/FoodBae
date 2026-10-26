@@ -26,14 +26,14 @@ SECRET_KEY = 'django-insecure-8@88mrmnp9z-f0l#&pm(jxdf#!v+&zctjdi_c22w$@zp3bg^+q
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "foodbae-backend-yyha.onrender.com",
+    "backend-g5cc.onrender.com",
     "localhost",
     "127.0.0.1",
 ]
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://foodbae-frontend.onrender.com",
+    "https://frontend-dri2.onrender.com",
 ]
 
 # Application definition
