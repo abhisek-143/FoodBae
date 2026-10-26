@@ -72,9 +72,9 @@ const Adminlayout = ({ children }) => {
   };
 
   return (
-    <div className=" w-full bg-black text-white lg:text-lg">
+    <div className=" w-full bg-black min-h-screen text-white lg:text-lg">
       {/* Navbar section... */}
-      <header className="w-full min-h-16 flex items-center bg-black text-white px-3 sm:px-5 shadow-2xl shadow-amber-200">
+      <header className="min-w-full min-h-16 flex items-center bg-black text-white px-3 sm:px-5 shadow-2xl shadow-amber-200">
         <button
           type="button"
           onClick={onOpen}
@@ -112,7 +112,7 @@ const Adminlayout = ({ children }) => {
         </div>
       </header>
 
-      <section className="flex min-h-screen">
+      <section className="flex mb-50">
         {profileBarOpen && (
           <div className="border border-t-0 bg-black font-semibold rounded-b-xl p-4 absolute right-0">
             <ul className="text-sm text-yellow-400 ">

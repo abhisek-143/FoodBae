@@ -32,6 +32,7 @@ const Stair = ({ children }) => {
       });
       t1.to(".stair", {
         y: "100%",
+        opacity:0,
         duration: 0.5,
         stagger: {
           amount: -0.3,
