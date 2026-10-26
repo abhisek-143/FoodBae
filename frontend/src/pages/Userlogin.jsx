@@ -123,7 +123,7 @@ const Userlogin = () => {
         </form>
         <div className="h-120 ps-30 w-[50%] hidden lg:block">
           <img
-            src="public/burger3.png"
+            src="/burger3.png"
             className=" bg-cover bg-center h-full"
             alt="food image"
           />
