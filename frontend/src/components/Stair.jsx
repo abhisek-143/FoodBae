@@ -40,6 +40,7 @@ const Stair = ({ children }) => {
 
       t1.set(parentRef, {
         display: "none",
+        opacity:0,
         pointerEvents: "none",
       });
 

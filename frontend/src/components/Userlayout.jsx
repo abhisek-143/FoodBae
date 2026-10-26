@@ -25,6 +25,7 @@ const Userlayout = ({ children }) => {
   const parentSideBarRef = useRef(null);
   const childSideBarRef = useRef(null);
   const profileBarRef = useRef(null);
+  const userId = localStorage.getItem("userId");
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [profileBarOpen, setProfileBarOpen] = useState(false);
@@ -298,7 +299,7 @@ const Userlayout = ({ children }) => {
         <section className="lg:min-h-110">{children}</section>
       )}
       {/* footer section */}
-      <footer className="bg-gray-800 text-white pt-8 ">
+      <footer className="bg-gray-800 text-white pt-8 w-full">
         <div className="mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-3">About Us</h3>
@@ -309,7 +310,8 @@ const Userlayout = ({ children }) => {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-3">Quick Links</h3>
-            <ul>
+            {userId && (<>
+                        <ul>
               <li>
                 <a href="/" className="hover:underline">
                   Home
@@ -331,6 +333,7 @@ const Userlayout = ({ children }) => {
                 </a>
               </li>
             </ul>
+</>)}
           </div>
           <div>
             <h3 className="text-xl font-bold mb-3">Follow Us</h3>
@@ -351,7 +354,7 @@ const Userlayout = ({ children }) => {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-3">Contact Us</h3>
-            <p>Email: foodbaekitchen@gmail.com</p>
+            <p className="truncate">Email: foodbaekitchen@gmail.com</p>
             <p>Phone: +91 7327881904</p>
             <p>Address: Shastri Nagar, Nayapalli, Bhubaneswar, Odisha 752036</p>
           </div>

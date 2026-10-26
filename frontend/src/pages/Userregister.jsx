@@ -91,18 +91,18 @@ const handleSubmit=async(e)=>{
 
   return (
     <Userlayout>
-      <div className="flex p-10 bg-black">
+      <div className="flex p-5 lg:p-10 w-full justify-center items-center mb-20 bg-black">
         <ToastContainer autoClose={2000} position="top-center"/>
         {/* creating form to receive user inputs to create new user */}
-        <form method="POST" encType="multipart/form-data" onSubmit={handleSubmit} className="border w-[50%] shadow-2xl shadow-amber-400 rounded-xl p-5 bg-gray-800">
-          <p className="font-bold text-3xl content-center text-red-600 pb-4 flex justify-center items-center">
+        <form method="POST" encType="multipart/form-data" onSubmit={handleSubmit} className="border w-[90%] lg:w-[50%] shadow-2xl md:mt-20 shadow-amber-400 rounded-xl p-2  md:p-5 bg-gray-800">
+          <p className="font-bold text-lg md:text-3xl mt-3 content-center text-red-600 pb-4 flex justify-center items-center">
             <span>--CREATE AN ACCOUNT--</span>
           </p>
-          <div className="flex relative pb-4">
-            <label className="font-bold pt-2 pe-2">First Name :</label>
+          <div className="flex flex-col gap-2 p-1">
+            <label className="font-bold pt-2 ps-1 pe-2">First Name :</label>
             <input
               type="text"
-              className="px-4 py-2 absolute right-0 cursor-pointer rounded-xl border w-100"
+              className="px-4 py-2  cursor-pointer rounded-xl border"
               name="firstname"
               value={formdata.firstname}
               onChange={(e)=>{
@@ -116,11 +116,11 @@ const handleSubmit=async(e)=>{
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Last Name :</label>
             <input
               type="text"
-              className="px-4 absolute right-0 py-2 cursor-pointer rounded-xl border w-100"
+              className="px-4 py-2  cursor-pointer rounded-xl border"
               name="lastname"
               value={formdata.lastname}
               onChange={(e)=>{
@@ -133,11 +133,11 @@ const handleSubmit=async(e)=>{
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Email :</label>
             <input
               type="email"
-              className="px-4 absolute right-0 py-2 cursor-pointer rounded-xl border w-100"
+              className="px-4 py-2 cursor-pointer rounded-xl border"
               name="Email"
               required
               value={formdata.email}
@@ -151,7 +151,7 @@ const handleSubmit=async(e)=>{
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Password :</label>
             <input
               type="password"
@@ -162,14 +162,14 @@ const handleSubmit=async(e)=>{
                   password : e.target.value
                 })
               }}
-              className="px-4 absolute right-0 py-2 cursor-pointer rounded-xl border w-100"
+              className="px-4  py-2 cursor-pointer rounded-xl border "
               name="password"
               required
               placeholder="password"
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Confirm Password :</label>
             <input
               type="password"
@@ -180,14 +180,14 @@ const handleSubmit=async(e)=>{
                   confirmpassword : e.target.value
                 })
               }}
-              className="px-4 py-2 absolute right-0 cursor-pointer rounded-xl border w-100"
+              className="px-4 py-2 cursor-pointer rounded-xl border"
               name="confirm-password"
               required
               placeholder="confirm password"
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Phone :</label>
             <input
               type="text"
@@ -198,14 +198,14 @@ const handleSubmit=async(e)=>{
                   phone : e.target.value
                 })
               }}
-              className="px-4 py-2 absolute right-0 cursor-pointer rounded-xl border w-100"
+              className="px-4 py-2  cursor-pointer rounded-xl border"
               name="phone"
               required
               placeholder="phone number"
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Gender :</label>
             <select
               name="gender" value={formdata.gender} onChange={(e)=>{
@@ -214,14 +214,14 @@ const handleSubmit=async(e)=>{
                   gender : e.target.value
                 })
               }}
-              className="px-4 py-2 text-black absolute right-0 cursor-pointer rounded-xl border-white border w-100"
+              className="px-4 py-2 text-black cursor-pointer rounded-xl border-white border"
             >
               <option value="0">--select--</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1">
             <label className="font-bold pt-2 pe-2">Pincode :</label>
             <input
               type="number"
@@ -232,13 +232,13 @@ const handleSubmit=async(e)=>{
                   pincode : e.target.value
                 })
               }}
-              className="px-4 absolute right-0 py-2 cursor-pointer rounded-xl border w-100"
+              className="px-4 py-2 cursor-pointer rounded-xl border"
               name="pincode"
               placeholder="pincode"
             />
             <br />
           </div>
-          <div className="flex relative pb-4">
+          <div className="flex flex-col gap-2 p-1 pb-4">
             <label className="font-bold pt-2 pe-2">Profile Image :</label>
             <input
               type="file"
@@ -248,7 +248,7 @@ const handleSubmit=async(e)=>{
                   profileimage : e.target.files[0]
                 })
               }}
-              className="px-4 absolute right-0 py-2 cursor-pointer rounded-xl border w-100"
+              className="px-4  py-2 cursor-pointer rounded-xl border w-100 lg:w-100 max-w-73"
               accept="image/*"
             />
           </div>
@@ -262,7 +262,7 @@ const handleSubmit=async(e)=>{
             </button>
           </div>
         </form>
-        <div className='bg-[url("public/biryani6.webp")] bg-center bg-cover w-[50%] rouned-xl'></div>
+        <div className='bg-[url("public/burger3.png")] hidden lg:block bg-center bg-cover rouned-xl'></div>
       </div>
     </Userlayout>
   );

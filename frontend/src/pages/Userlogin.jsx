@@ -55,13 +55,13 @@ const Userlogin = () => {
 
   return (
     <Userlayout>
-      <div className="flex justify-center items-start pt-20 p-10 bg-black h-screen">
+      <div className="flex justify-center items-start pt-20 md:p-10 md:h-screen bg-black mb-20">
         <ToastContainer position="top-center" autoClose={2000} />
         {/* creating form to receive user inputs */}
         <form
           onSubmit={submitHandler}
           method="POST"
-          className=" w-[50%] rounded-xl ps-20 shadow-2xl shadow-amber-400 pt-20 h-100 pe-50  border border-white"
+          className="w-[90%] md:w-[80%] lg:w-[50%] rounded-xl md:ps-20 shadow-2xl shadow-amber-400 p-5 md:mt-20  md:pt-20 h-77 md:h-100 md:pe-50  border border-white"
         >
           <p className="font-bold text-3xl content-center text-yellow-400  pb-4 flex justify-start italic items-center">
             <span>Login</span>
@@ -121,7 +121,7 @@ const Userlogin = () => {
             </p>
           </div>
         </form>
-        <div className="h-120 ps-30 w-[50%]">
+        <div className="h-120 ps-30 w-[50%] hidden lg:block">
           <img
             src="public/burger3.png"
             className=" bg-cover bg-center h-full"
