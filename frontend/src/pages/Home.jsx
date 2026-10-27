@@ -116,21 +116,6 @@ const Home = () => {
                 sizzling street food, we’ve got something to satisfy every
                 craving. Taste happiness today!
               </p>
-              <p className="">
-                At FOODBAE, we believe food is more than just a meal — it’s an
-                experience. Our chefs blend tradition and creativity to serve
-                dishes that delight your senses.
-              </p>
-
-              <p className=" mt-4">
-                Don’t miss our seasonal delights and exclusive combos designed
-                to make your dining experience unforgettable.
-              </p>
-              <p className="">
-                Good food brings people together. At FOODBAE Haven, we’re proud
-                to serve happiness one plate at a time. Order now and let your
-                taste buds celebrate!
-              </p>
             </div>
             <div className="ps-10 lg:ps-20">
               <img
