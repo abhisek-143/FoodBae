@@ -8,7 +8,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Foodcard = ({ item }) => {
   const navigate = useNavigate();
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_API_URL.replace(/\/+$/, "");
 
   return (
     <div
