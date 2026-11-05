@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Adminlayout from "../components/Adminlayout";
 
 const Admindashboard = () => {
-    const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dashboardData, setDashboardData] = useState({
@@ -35,33 +35,31 @@ const Admindashboard = () => {
     return () => window.removeEventListener("resize", syncSidebar);
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`${BASE_URL}/api/admin/admin_dashboard_details/`)
-    .then((res)=>res.json())
-    .then((data)=>{
-      setDashboardData({
-        ...dashboardData,
-            total_new_order: data.total_new_order,
-    total_orders: data.total_orders,
-    total_not_confirmed: data.total_not_confirmed,
-    total_confirmed: data.total_confirmed,
-    total_preparing: data.total_preparing,
-    total_pick_up: data.total_pick_up,
-    total_delivered: data.total_delivered,
-    total_cancelled: data.total_cancelled,
-    today_sales: data.today_sales,
-    week_sales: data.week_sales,
-    month_sales: data.month_sales,
-    year_sales: data.year_sales,
-    total_sales: data.total_sales,
-    total_users: data.total_users,
-    total_categories: data.total_categories,
-    total_foods: data.total_foods,
-
-
-      })
-    })
-  },[])
+      .then((res) => res.json())
+      .then((data) => {
+        setDashboardData({
+          ...dashboardData,
+          total_new_order: data.total_new_order,
+          total_orders: data.total_orders,
+          total_not_confirmed: data.total_not_confirmed,
+          total_confirmed: data.total_confirmed,
+          total_preparing: data.total_preparing,
+          total_pick_up: data.total_pick_up,
+          total_delivered: data.total_delivered,
+          total_cancelled: data.total_cancelled,
+          today_sales: data.today_sales,
+          week_sales: data.week_sales,
+          month_sales: data.month_sales,
+          year_sales: data.year_sales,
+          total_sales: data.total_sales,
+          total_users: data.total_users,
+          total_categories: data.total_categories,
+          total_foods: data.total_foods,
+        });
+      });
+  }, []);
 
   const data = [
     {
@@ -70,7 +68,7 @@ const Admindashboard = () => {
       color: "blue",
       icon: "🛒",
       text_color: "white",
-      link : "/admin/orders/all-orders"
+      link: "/admin/orders/all-orders",
     },
     {
       title_name: "New Orders",
@@ -78,8 +76,7 @@ const Admindashboard = () => {
       color: "limegreen",
       icon: "✨",
       text_color: "black",
-            link : "/admin/orders/not-confirmed"
-
+      link: "/admin/orders/not-confirmed",
     },
     {
       title_name: "Total Categories",
@@ -87,8 +84,7 @@ const Admindashboard = () => {
       color: "gray",
       icon: "📂",
       text_color: "white",
-            link : "/managecategory"
-
+      link: "/managecategory",
     },
     {
       title_name: "Total Food Items",
@@ -96,8 +92,7 @@ const Admindashboard = () => {
       color: "darkslategray",
       icon: "🍲",
       text_color: "white",
-            link : "/manage-food-items"
-
+      link: "/manage-food-items",
     },
     {
       title_name: "Confirmed",
@@ -105,8 +100,7 @@ const Admindashboard = () => {
       color: "green",
       icon: "✅",
       text_color: "white",
-            link : "/admin/orders/confirmed"
-
+      link: "/admin/orders/confirmed",
     },
     {
       title_name: "Not Confirmed",
@@ -114,8 +108,7 @@ const Admindashboard = () => {
       color: "orange",
       icon: "⚠️",
       text_color: "black",
-            link : "/admin/orders/not-confirmed"
-
+      link: "/admin/orders/not-confirmed",
     },
     {
       title_name: "Pick Up",
@@ -123,8 +116,7 @@ const Admindashboard = () => {
       color: "dodgerblue",
       icon: "📦",
       text_color: "white",
-            link : "/admin/orders/pick-up"
-
+      link: "/admin/orders/pick-up",
     },
     {
       title_name: "Preparing",
@@ -132,8 +124,7 @@ const Admindashboard = () => {
       color: "goldenrod",
       icon: "👨‍🍳",
       text_color: "black",
-            link : "/admin/orders/order-on-preparing"
-
+      link: "/admin/orders/order-on-preparing",
     },
     {
       title_name: "Delivered",
@@ -141,8 +132,7 @@ const Admindashboard = () => {
       color: "seagreen",
       icon: "🚚",
       text_color: "white",
-            link : "/admin/orders/delivered"
-
+      link: "/admin/orders/delivered",
     },
     {
       title_name: "Cancelled",
@@ -150,8 +140,7 @@ const Admindashboard = () => {
       color: "crimson",
       icon: "❌",
       text_color: "white",
-            link : "/admin/orders/cancelled"
-
+      link: "/admin/orders/cancelled",
     },
     {
       title_name: "Total Users",
@@ -159,8 +148,7 @@ const Admindashboard = () => {
       color: "purple",
       icon: "👤",
       text_color: "white",
-            link : "/admin/all-register-users"
-
+      link: "/admin/all-register-users",
     },
     {
       title_name: "Today Sales",
@@ -168,8 +156,7 @@ const Admindashboard = () => {
       color: "teal",
       icon: "💰",
       text_color: "white",
-            link : "#"
-
+      link: "#",
     },
     {
       title_name: "Week Sales",
@@ -177,8 +164,7 @@ const Admindashboard = () => {
       color: "mediumseagreen",
       icon: "📈",
       text_color: "white",
-            link : "#"
-
+      link: "#",
     },
     {
       title_name: "Month Sales",
@@ -186,8 +172,7 @@ const Admindashboard = () => {
       color: "royalblue",
       icon: "📊",
       text_color: "white",
-            link : "#"
-
+      link: "#",
     },
     {
       title_name: "Year Sales",
@@ -195,8 +180,7 @@ const Admindashboard = () => {
       color: "darkorchid",
       icon: "📅",
       text_color: "white",
-            link : "#"
-
+      link: "#",
     },
     {
       title_name: "Total Sales",
@@ -204,8 +188,7 @@ const Admindashboard = () => {
       color: "darkgreen",
       icon: "💵",
       text_color: "white",
-            link : "#"
-
+      link: "#",
     },
   ];
   ``;
@@ -213,7 +196,9 @@ const Admindashboard = () => {
     <Adminlayout>
       <div className="mb-20  flex flex-col lg:py-7 py-4 px-8 md:px-10">
         <div className="flex lg:text-3xl lg:py-4 text-yellow-400">
-          <h1 className="font-bold py-2 md:py-4 lg:ms-5 lg:pt-0 text-xl md:text-2xl lg:text-3xl"># DASHBOARD </h1>
+          <h1 className="font-bold py-2 md:py-4 lg:ms-5 lg:pt-0 text-xl md:text-2xl lg:text-3xl">
+            # DASHBOARD{" "}
+          </h1>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3  md:gap-2 lg:min-w-7xl md:min-w-2xl text-gray-200">
@@ -225,12 +210,14 @@ const Admindashboard = () => {
                 className="border cursor-pointer active:scale-95' rounded-xl p-3"
               >
                 <Link to={item.link}>
-                                <h1 className="font-bold lg:text-xl">{item.title_name}</h1>
-                <div className="flex justify-between items-center">
-                  <p className="lg:py-5 text-2xl px-5">{item.title_quantity}</p>
-                  <p className="text-4xl">{item.icon}</p>
-                </div>
-</Link>
+                  <h1 className="font-bold lg:text-xl">{item.title_name}</h1>
+                  <div className="flex justify-between items-center">
+                    <p className="lg:py-5 text-2xl px-5">
+                      {item.title_quantity}
+                    </p>
+                    <p className="text-4xl">{item.icon}</p>
+                  </div>
+                </Link>
               </div>
             );
           })}

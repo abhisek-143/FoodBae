@@ -21,7 +21,7 @@ const UserProvider = ({children}) => {
         setCartCount(data.length)
       });
 
-    }, [wishlistCount,cartCount]);
+    }, [BASE_URL]);
   
   
     

@@ -33,6 +33,7 @@ const FoodMenu = () => {
     fetch(`${BASE_URL}/api/food/manage-food-items/`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setFoods(data);
         setAllFoods(data);
         setLoading(false)

@@ -169,20 +169,40 @@ def View_Cart(request):
     serializer = CartSerializer(cart,many=True)
     return Response(serializer.data,status=status.HTTP_200_OK)
 
-@api_view(["GET","POST"])
-def Add_CartItem_View(request,id):
-    food = Food.objects.get(id=id)
-    userId = request.data.get("userId")
-    user = User.objects.get(id=userId)
-    order_quantity = request.data.get("order_quantity")
-    total_amount = order_quantity * food.food_price
+@api_view(["POST"])
+def Add_CartItem_View(request, id):
+    user_id = request.data.get("userId")
+    if not user_id:
+        return Response({"message": "Please login first"}, status=status.HTTP_401_UNAUTHORIZED)
 
-    
-    if CartItem.objects.filter(user=user,food=food):
-        return Response({"message":"Item already in Cart!"},status=status.HTTP_409_CONFLICT)
-    CartItem.objects.create(user=user,food=food,order_quantity=order_quantity,total_amount=total_amount)
-    return Response({"message":"Added To Cart Successfully!"},status=status.HTTP_201_CREATED)
+    try:
+        food = Food.objects.get(id=id)
+    except Food.DoesNotExist:
+        return Response({"message": "Food not found!"}, status=status.HTTP_404_NOT_FOUND)
 
+    try:
+        user = User.objects.get(id=user_id)
+    except (User.DoesNotExist, ValueError):
+        return Response({"message": "User not found!"}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        order_quantity = int(request.data.get("order_quantity"))
+    except (TypeError, ValueError):
+        return Response({"message": "Invalid quantity"}, status=status.HTTP_400_BAD_REQUEST)
+
+    if order_quantity < 1:
+        return Response({"message": "Quantity must be at least 1"}, status=status.HTTP_400_BAD_REQUEST)
+
+    if CartItem.objects.filter(user=user, food=food).exists():
+        return Response({"message": "Item already in Cart!"}, status=status.HTTP_409_CONFLICT)
+
+    CartItem.objects.create(
+        user=user,
+        food=food,
+        order_quantity=order_quantity,
+        total_amount=order_quantity * food.food_price,
+    )
+    return Response({"message": "Added To Cart Successfully!"}, status=status.HTTP_201_CREATED)
 
 @api_view(["DELETE"])
 def Delete_CartItem_View(request,id):

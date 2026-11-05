@@ -16,6 +16,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [totalAmount, setTotalAmount] = useState(0);
   const [deletation, setDeletation] = useState(false);
+  const [loading, setLoading] = useState(true)
   const userId = localStorage.getItem("userId")
     const { cartCount, setCartCount } = useContext(UserContext);
   
@@ -24,6 +25,7 @@ const Cart = () => {
   useEffect(() => {
     if(!userId){
       navigate("/user-login")
+      return;
     }
 
 
@@ -31,6 +33,7 @@ const Cart = () => {
       .then((res) => res.json())
       .then((data) => {
         setCart(data);
+        setLoading(false)
         setCartCount(data.length)
         const total = data.reduce((sum, value) => {
           const price = Number(value.total_amount);

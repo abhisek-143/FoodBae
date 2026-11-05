@@ -45,7 +45,8 @@ const ViewProduct = () => {
   const addToCartHandler = async () => {
     //logic or not -- checking...
     if (!userId) {
-      navigate("/user-login");
+      navigate("/user-login")
+      return;
     }
 
     try {
