@@ -22,7 +22,6 @@ const Foodcard = ({ item }) => {
     >
       <div className="w-45 md:w-55 lg:w-77 rounded shadow-2xl bg-white">
         <img
-<<<<<<< HEAD
           className="w-45 md:w-55 lg:w-77 rounded-xl rounded-t-sm h-35 md:h-60 object-cover"
           src={getImageUrl(item.food_image)}
           alt={item.food_name || "Food image"}
@@ -31,11 +30,6 @@ const Foodcard = ({ item }) => {
             e.currentTarget.onerror = null; // prevent infinite loop
             e.currentTarget.src = "/placeholder.png";
           }}
-=======
-          className="w-45 md:w-55 lg:w-77 rounded-xl bg-cover bg-center rounded-t-sm h-35 md:h-60"
-          src={`${BASE_URL}/${item.food_image}`}
-          alt="Card image"
->>>>>>> c4bd08d (deploy changes)
         />
 
         <div className="p-2 md:px-2 md:py-2">
