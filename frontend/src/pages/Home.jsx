@@ -53,7 +53,7 @@ const Home = () => {
       x: 0,
       scale: 1,
     });
-  }, [burgerRef]);
+  }, [loading,BASE_URL]);
 
 
   return (
