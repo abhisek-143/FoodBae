@@ -29,11 +29,10 @@ const Cart = () => {
     }
 
 
-    fetch(`${BASE_URL}/api/user/cart/`)
+    fetch(`${BASE_URL}/api/user/cart/${userId}/`)
       .then((res) => res.json())
       .then((data) => {
         setCart(data);
-        setLoading(false)
         setCartCount(data.length)
         const total = data.reduce((sum, value) => {
           const price = Number(value.total_amount);
@@ -42,6 +41,8 @@ const Cart = () => {
         }, 0);
         setTotalAmount(total);
       });
+              setLoading(false)
+
   }, [deletation]);
 
   //remove cart item logic from Cart...

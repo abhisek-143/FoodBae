@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='order',
             name='payment_option',
-            field=models.CharField(default='COD'),
+            field=models.CharField(max_length=50),
         ),
     ]

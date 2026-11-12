@@ -164,14 +164,22 @@ def View_Food_Item(request,id):
 
 
 @api_view(["GET"])
-def View_Cart(request):
-    cart = CartItem.objects.all()
+def View_Cart(request,id):
+    try:
+        user = User.objects.get(id=id)
+    except User.DoesNotExist:
+        return Response({"message":"user not found!"},status=status.HTTP_404_NOT_FOUND)
+    if not user:
+        return Response({"message":"user not found"},status=status.HTTP_404_NOT_FOUND)
+        
+    cart = CartItem.objects.filter(user=user)
     serializer = CartSerializer(cart,many=True)
     return Response(serializer.data,status=status.HTTP_200_OK)
 
 @api_view(["POST"])
 def Add_CartItem_View(request, id):
     user_id = request.data.get("userId")
+    print(user_id)
     if not user_id:
         return Response({"message": "Please login first"}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -181,7 +189,8 @@ def Add_CartItem_View(request, id):
         return Response({"message": "Food not found!"}, status=status.HTTP_404_NOT_FOUND)
 
     try:
-        user = User.objects.get(id=user_id)
+        user = User.objects.get(user_id)
+        print(user)
     except (User.DoesNotExist, ValueError):
         return Response({"message": "User not found!"}, status=status.HTTP_404_NOT_FOUND)
 
@@ -535,8 +544,14 @@ def Add_To_Wishlist_View(request,id):
 
 
 @api_view(["GET"])
-def View_All_WishLists(request):
-    wishlists = Wishlist.objects.all().order_by("created_at")
+def View_All_WishLists(request,id):
+    user = User.objects.get(id=id)
+    if not user:
+        return Response({"message":"user not found"},status=status.HTTP_404_NOT_FOUND)
+    
+    wishlists = Wishlist.objects.filter(user=user).order_by("created_at")
+    print(wishlists)
+
     serializer = WishlistSerializers(wishlists,many=True)
     return Response(serializer.data,status=status.HTTP_200_OK) 
 

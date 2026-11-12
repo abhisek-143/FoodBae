@@ -1,0 +1,1017 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$jpiE2rV9bz0omXUwEugxbe$DJxNnlBhnP+yMD/MclWKJ8k9DIvSOHvi5S0VR06A/bE=",
+    "last_login": "2026-10-16T12:58:27.086Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "abhisek",
+    "last_name": "jena",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-04T18:01:20Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 22,
+  "fields": {
+    "category_name": "Fast Food",
+    "created_at": "2026-10-02T13:37:11.688Z",
+    "updated_at": "2026-10-02T13:37:11.732Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 28,
+  "fields": {
+    "category_name": "South Indian",
+    "created_at": "2026-10-03T06:45:10.135Z",
+    "updated_at": "2026-10-03T06:45:32.697Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 29,
+  "fields": {
+    "category_name": "North indian",
+    "created_at": "2026-10-03T06:45:17.487Z",
+    "updated_at": "2026-10-03T06:45:17.490Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 31,
+  "fields": {
+    "category_name": "Biryani",
+    "created_at": "2026-10-03T06:45:57.174Z",
+    "updated_at": "2026-10-03T06:45:57.197Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 32,
+  "fields": {
+    "category_name": "Cool Drinks",
+    "created_at": "2026-10-06T06:44:29.353Z",
+    "updated_at": "2026-10-06T06:44:29.360Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 34,
+  "fields": {
+    "category_name": "tea",
+    "created_at": "2026-10-15T15:48:13.257Z",
+    "updated_at": "2026-10-15T15:48:13.260Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 35,
+  "fields": {
+    "category_name": "coffee",
+    "created_at": "2026-10-15T15:48:18.143Z",
+    "updated_at": "2026-10-15T15:48:18.154Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 36,
+  "fields": {
+    "category_name": "Non Veg",
+    "created_at": "2026-10-15T15:48:57.383Z",
+    "updated_at": "2026-10-15T15:49:21.731Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 37,
+  "fields": {
+    "category_name": "Pure Veg",
+    "created_at": "2026-10-15T15:49:03.657Z",
+    "updated_at": "2026-10-15T15:49:03.663Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 38,
+  "fields": {
+    "category_name": "Lassi",
+    "created_at": "2026-10-17T12:11:34.226Z",
+    "updated_at": "2026-10-17T12:11:34.230Z"
+  }
+},
+{
+  "model": "food_ordering.category",
+  "pk": 39,
+  "fields": {
+    "category_name": "Ice Cream",
+    "created_at": "2026-10-17T12:11:43.505Z",
+    "updated_at": "2026-10-17T12:11:43.508Z"
+  }
+},
+{
+  "model": "food_ordering.user",
+  "pk": 5,
+  "fields": {
+    "firstname": "abhisek",
+    "lastname": "jena",
+    "email": "abhisekjena2003@gmail.com",
+    "password": "pbkdf2_sha256$1500000$PX6YgYUXsHLY97KTwjm9E0$KDzh69r5FWHoXuVT+uIWwFHhrV/t1nBxNBczjH++qDI=",
+    "phone": "7327881904",
+    "gender": "male",
+    "address": null,
+    "pincode": "752031",
+    "profile_image": "profile/WhatsApp_Image_2025-12-08_at_10_ulPgV9i.42.20_AM.jpeg",
+    "created_at": "2026-10-05T14:10:31.409Z",
+    "updated_at": "2026-10-05T14:10:31.409Z"
+  }
+},
+{
+  "model": "food_ordering.user",
+  "pk": 6,
+  "fields": {
+    "firstname": "Rajesh",
+    "lastname": "Palai",
+    "email": "rajesh@gmail.com",
+    "password": "pbkdf2_sha256$1500000$DjM3s4jca6mW5gOkwawkWX$0feuco4sHdNJNB1JApcoqNnu1ruaE2YvQqbgGuDMaUU=",
+    "phone": "7631456523",
+    "gender": "male",
+    "address": null,
+    "pincode": "725031",
+    "profile_image": "null",
+    "created_at": "2026-10-15T14:54:22.534Z",
+    "updated_at": "2026-10-15T14:54:22.534Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 4,
+  "fields": {
+    "category": 28,
+    "food_name": "Vada with Chattney",
+    "food_quantity": "2 pcs",
+    "food_image": "food/Vada.webp",
+    "food_price": "148.00",
+    "food_description": "Tasty 2 pcs. Vada with coconut Chatney",
+    "is_available": true,
+    "created_at": "2026-10-04T20:20:19.190Z",
+    "updated_at": "2026-10-15T17:25:26.577Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 6,
+  "fields": {
+    "category": 31,
+    "food_name": "Chicken Biryani Paradise",
+    "food_quantity": "1 kg",
+    "food_image": "food/biryani1.webp",
+    "food_price": "249.00",
+    "food_description": "spicy hot fresh 1 kg of paradise chicken biryani",
+    "is_available": true,
+    "created_at": "2026-10-06T06:35:17.210Z",
+    "updated_at": "2026-10-06T06:35:17.210Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 7,
+  "fields": {
+    "category": 31,
+    "food_name": "Hyderabadi Chicken Biryani",
+    "food_quantity": "1 kg",
+    "food_image": "food/biryani2.webp",
+    "food_price": "199.00",
+    "food_description": "chicken biryani with round shape cutting onions in hyderabad style...",
+    "is_available": true,
+    "created_at": "2026-10-06T06:38:24.813Z",
+    "updated_at": "2026-10-06T06:38:24.813Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 8,
+  "fields": {
+    "category": 31,
+    "food_name": "Kolkata Chicken Biryani",
+    "food_quantity": "1 kg",
+    "food_image": "food/biryani3.webp",
+    "food_price": "219.00",
+    "food_description": "tasty spicy chicken biryani with raita",
+    "is_available": true,
+    "created_at": "2026-10-06T06:39:38.025Z",
+    "updated_at": "2026-10-06T06:39:38.025Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 9,
+  "fields": {
+    "category": 31,
+    "food_name": "Kalyani Biryani",
+    "food_quantity": "1 kg",
+    "food_image": "food/biryani4.webp",
+    "food_price": "349.00",
+    "food_description": "india's famous tasty kayani biryani with spicy gravy and raita..",
+    "is_available": true,
+    "created_at": "2026-10-06T06:41:42.664Z",
+    "updated_at": "2026-10-06T06:41:42.664Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 10,
+  "fields": {
+    "category": 31,
+    "food_name": "Bombay Biryani",
+    "food_quantity": "500 g",
+    "food_image": "food/biryani6.webp",
+    "food_price": "249.00",
+    "food_description": "original taste of chicken biryani in bombay style",
+    "is_available": true,
+    "created_at": "2026-10-06T06:43:16.068Z",
+    "updated_at": "2026-10-06T06:43:16.068Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 12,
+  "fields": {
+    "category": 32,
+    "food_name": "Lime Juice",
+    "food_quantity": "1 glass",
+    "food_image": "food/Limejuice_RSeAJ0G.webp",
+    "food_price": "69.00",
+    "food_description": "1 glass of lime juice with ice cube",
+    "is_available": true,
+    "created_at": "2026-10-06T06:45:35.177Z",
+    "updated_at": "2026-10-06T06:45:35.177Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 13,
+  "fields": {
+    "category": 32,
+    "food_name": "Coconut Mojito",
+    "food_quantity": "1 glass",
+    "food_image": "food/coconutmojito1.webp",
+    "food_price": "69.00",
+    "food_description": "Coconut taste in Mojito style",
+    "is_available": true,
+    "created_at": "2026-10-06T06:48:05.399Z",
+    "updated_at": "2026-10-06T06:48:05.399Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 14,
+  "fields": {
+    "category": 32,
+    "food_name": "Spicy Promogranate Mojito",
+    "food_quantity": "1 glass",
+    "food_image": "food/spicypromogranatemojito2.webp",
+    "food_price": "99.00",
+    "food_description": "awesome Mojito flavor in a glass",
+    "is_available": true,
+    "created_at": "2026-10-06T06:50:10.149Z",
+    "updated_at": "2026-10-06T06:50:10.149Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 17,
+  "fields": {
+    "category": 22,
+    "food_name": "Peri Peri Burger",
+    "food_quantity": "1 pcs",
+    "food_image": "food/burger3.webp",
+    "food_price": "249.00",
+    "food_description": "burger with hot french fries in a new style...",
+    "is_available": true,
+    "created_at": "2026-10-06T06:53:33.486Z",
+    "updated_at": "2026-10-06T06:53:33.486Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 23,
+  "fields": {
+    "category": 38,
+    "food_name": "Lassi",
+    "food_quantity": "1 glass",
+    "food_image": "food/lassi2.webp",
+    "food_price": "99.00",
+    "food_description": "cold lassi...with stray",
+    "is_available": true,
+    "created_at": "2026-10-17T12:13:22.216Z",
+    "updated_at": "2026-10-17T12:13:22.216Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 24,
+  "fields": {
+    "category": 38,
+    "food_name": "Mango Lassi",
+    "food_quantity": "1 glass",
+    "food_image": "food/lassi4.webp",
+    "food_price": "119.00",
+    "food_description": "lassi with mango flavour",
+    "is_available": true,
+    "created_at": "2026-10-17T12:14:17.308Z",
+    "updated_at": "2026-10-17T12:14:17.308Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 25,
+  "fields": {
+    "category": 38,
+    "food_name": "Special Lassi",
+    "food_quantity": "1 glass",
+    "food_image": "food/lassi3.webp",
+    "food_price": "89.00",
+    "food_description": "special lassi with good flavour",
+    "is_available": true,
+    "created_at": "2026-10-17T12:16:36.893Z",
+    "updated_at": "2026-10-17T12:16:36.894Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 26,
+  "fields": {
+    "category": 38,
+    "food_name": "Lassi",
+    "food_quantity": "1 glass",
+    "food_image": "food/lasii5.webp",
+    "food_price": "117.00",
+    "food_description": "healthy Lassi...",
+    "is_available": true,
+    "created_at": "2026-10-17T12:21:24.431Z",
+    "updated_at": "2026-10-17T12:21:24.431Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 27,
+  "fields": {
+    "category": 36,
+    "food_name": "Chicken Tandori",
+    "food_quantity": "2 pcs",
+    "food_image": "food/tandori2.webp",
+    "food_price": "199.00",
+    "food_description": "hyderabadi chicken tandori",
+    "is_available": true,
+    "created_at": "2026-10-17T12:22:55.263Z",
+    "updated_at": "2026-10-17T12:22:55.263Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 28,
+  "fields": {
+    "category": 36,
+    "food_name": "Hyderabadi Chicken Tandori",
+    "food_quantity": "2 pcs",
+    "food_image": "food/tandori3.webp",
+    "food_price": "249.00",
+    "food_description": "tandori in hyderabadi style..",
+    "is_available": true,
+    "created_at": "2026-10-17T12:24:20.974Z",
+    "updated_at": "2026-10-17T12:24:20.974Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 29,
+  "fields": {
+    "category": 36,
+    "food_name": "Spicy Chicken Tandori",
+    "food_quantity": "2 pcs",
+    "food_image": "food/tandori5.webp",
+    "food_price": "299.00",
+    "food_description": "Spicy chicken Tandori",
+    "is_available": true,
+    "created_at": "2026-10-17T12:25:30.817Z",
+    "updated_at": "2026-10-17T12:25:30.817Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 30,
+  "fields": {
+    "category": 36,
+    "food_name": "Tandori Chicken",
+    "food_quantity": "3 pcs",
+    "food_image": "food/tandori4.webp",
+    "food_price": "249.00",
+    "food_description": "chicken tandori with chilli sauce",
+    "is_available": true,
+    "created_at": "2026-10-17T12:26:27.871Z",
+    "updated_at": "2026-10-17T12:26:27.871Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 31,
+  "fields": {
+    "category": 28,
+    "food_name": "Vada",
+    "food_quantity": "4 pcs",
+    "food_image": "food/vada5.webp",
+    "food_price": "69.00",
+    "food_description": "Vada in south style",
+    "is_available": true,
+    "created_at": "2026-10-17T12:27:34.742Z",
+    "updated_at": "2026-10-17T12:27:34.742Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 32,
+  "fields": {
+    "category": 28,
+    "food_name": "Vada with Chattney",
+    "food_quantity": "5 pcs",
+    "food_image": "food/vada4.webp",
+    "food_price": "79.00",
+    "food_description": "Vada with tasty flavour",
+    "is_available": true,
+    "created_at": "2026-10-17T12:28:18.844Z",
+    "updated_at": "2026-10-17T12:28:18.844Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 33,
+  "fields": {
+    "category": 28,
+    "food_name": "Vada With Coconut Chattney",
+    "food_quantity": "4 pcs",
+    "food_image": "food/vada3.webp",
+    "food_price": "99.00",
+    "food_description": "Vada with white coconut chatney",
+    "is_available": true,
+    "created_at": "2026-10-17T12:29:11.933Z",
+    "updated_at": "2026-10-17T12:29:11.933Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 34,
+  "fields": {
+    "category": 22,
+    "food_name": "Pizza",
+    "food_quantity": "regular",
+    "food_image": "food/pizza3.webp",
+    "food_price": "249.00",
+    "food_description": "Pizza with good taste vibes",
+    "is_available": true,
+    "created_at": "2026-10-17T12:31:02.143Z",
+    "updated_at": "2026-10-17T12:31:02.143Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 35,
+  "fields": {
+    "category": 22,
+    "food_name": "Pizza",
+    "food_quantity": "regular",
+    "food_image": "food/pizza4.webp",
+    "food_price": "299.00",
+    "food_description": "cut slices of healthy pizza",
+    "is_available": true,
+    "created_at": "2026-10-17T12:31:49.760Z",
+    "updated_at": "2026-10-17T14:21:55.993Z"
+  }
+},
+{
+  "model": "food_ordering.food",
+  "pk": 36,
+  "fields": {
+    "category": 22,
+    "food_name": "Pizza",
+    "food_quantity": "regular",
+    "food_image": "food/pizza1.webp",
+    "food_price": "199.00",
+    "food_description": "Pizza with tasty cheese",
+    "is_available": true,
+    "created_at": "2026-10-17T12:34:09.940Z",
+    "updated_at": "2026-10-17T12:34:09.940Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 66,
+  "fields": {
+    "user": 5,
+    "order_number": "18AB9E25",
+    "locality_area_01": "balugaon main road",
+    "locality_area_02": "balugaon main road",
+    "landmark": "near bata store",
+    "city": "balugaon",
+    "district": "khurdha",
+    "state": "odisha",
+    "status": "Cancelled",
+    "payment_option": "Online",
+    "card_number": "5263457896325",
+    "expiry_date": "20/05",
+    "cvv": "218",
+    "total_amount": "149.00",
+    "created_at": "2026-10-13T09:49:32.324Z",
+    "updated_at": "2026-10-18T10:34:32.356Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 67,
+  "fields": {
+    "user": 5,
+    "order_number": "CA50538D",
+    "locality_area_01": "shastri nagar",
+    "locality_area_02": "shastri nagar",
+    "landmark": "tulasi sangita academy",
+    "city": "bhubaneshwar",
+    "district": "khurdha",
+    "state": "odisha",
+    "status": "Cancelled",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "297.00",
+    "created_at": "2026-10-13T09:50:56.251Z",
+    "updated_at": "2026-10-18T10:49:33.766Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 68,
+  "fields": {
+    "user": 5,
+    "order_number": "640CAAF4",
+    "locality_area_01": "Nua Sahi",
+    "locality_area_02": "Gaon bhitara sahi",
+    "landmark": "Gaon bhitara",
+    "city": "banpur",
+    "district": "khordha",
+    "state": "state",
+    "status": "Cancelled",
+    "payment_option": "online",
+    "card_number": "2154256325878965",
+    "expiry_date": "01/10",
+    "cvv": "522",
+    "total_amount": "876.00",
+    "created_at": "2026-10-13T18:34:29.143Z",
+    "updated_at": "2026-10-18T10:55:52.361Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 89,
+  "fields": {
+    "user": 5,
+    "order_number": "127490DD",
+    "locality_area_01": "a",
+    "locality_area_02": "aa",
+    "landmark": "a",
+    "city": "a",
+    "district": "a",
+    "state": "a",
+    "status": "Cancelled",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "1153.00",
+    "created_at": "2026-10-13T20:57:36.393Z",
+    "updated_at": "2026-10-18T10:54:49.404Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 90,
+  "fields": {
+    "user": 5,
+    "order_number": "D4D255E9",
+    "locality_area_01": "a",
+    "locality_area_02": "a",
+    "landmark": "",
+    "city": "a",
+    "district": "a",
+    "state": "aa",
+    "status": "Cancelled",
+    "payment_option": "online",
+    "card_number": "8596745263122365",
+    "expiry_date": "26/02",
+    "cvv": "233",
+    "total_amount": "585.00",
+    "created_at": "2026-10-18T11:00:06.272Z",
+    "updated_at": "2026-10-18T12:57:58.641Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 91,
+  "fields": {
+    "user": 5,
+    "order_number": "A771622A",
+    "locality_area_01": "a",
+    "locality_area_02": "a",
+    "landmark": "a",
+    "city": "a",
+    "district": "a",
+    "state": "a",
+    "status": "Cancelled",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "249.00",
+    "created_at": "2026-10-18T13:00:44.232Z",
+    "updated_at": "2026-10-18T13:01:06.177Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 92,
+  "fields": {
+    "user": 5,
+    "order_number": "D87750AA",
+    "locality_area_01": "x",
+    "locality_area_02": "x",
+    "landmark": "x",
+    "city": "xx",
+    "district": "x",
+    "state": "x",
+    "status": "Cancelled",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "199.00",
+    "created_at": "2026-10-18T13:03:06.159Z",
+    "updated_at": "2026-10-18T13:07:47.332Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 93,
+  "fields": {
+    "user": 5,
+    "order_number": "17150745",
+    "locality_area_01": "a",
+    "locality_area_02": "a",
+    "landmark": "a",
+    "city": "a",
+    "district": "a",
+    "state": "a",
+    "status": "Cancelled",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "249.00",
+    "created_at": "2026-10-18T13:09:44.016Z",
+    "updated_at": "2026-10-18T13:10:27.012Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 94,
+  "fields": {
+    "user": 5,
+    "order_number": "AE74D603",
+    "locality_area_01": "h",
+    "locality_area_02": "h",
+    "landmark": "h",
+    "city": "h",
+    "district": "h",
+    "state": "hh",
+    "status": "Cancelled",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "148.00",
+    "created_at": "2026-10-18T13:14:04.935Z",
+    "updated_at": "2026-10-18T13:14:26.237Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 95,
+  "fields": {
+    "user": 5,
+    "order_number": "DE6C8354",
+    "locality_area_01": "aa",
+    "locality_area_02": "aaa",
+    "landmark": "aaa",
+    "city": "aaaaaaa",
+    "district": "aaa",
+    "state": "aaaa",
+    "status": "Pick Up",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "1494.00",
+    "created_at": "2026-10-18T13:16:06.868Z",
+    "updated_at": "2026-10-18T14:33:20.502Z"
+  }
+},
+{
+  "model": "food_ordering.order",
+  "pk": 96,
+  "fields": {
+    "user": 5,
+    "order_number": "EE96C7C6",
+    "locality_area_01": "f",
+    "locality_area_02": "ff",
+    "landmark": "f",
+    "city": "f",
+    "district": "f",
+    "state": "f",
+    "status": "Not_Confirmed",
+    "payment_option": "COD",
+    "card_number": null,
+    "expiry_date": null,
+    "cvv": null,
+    "total_amount": "69.00",
+    "created_at": "2026-10-18T19:20:32.816Z",
+    "updated_at": "2026-10-18T19:20:32.846Z"
+  }
+},
+{
+  "model": "food_ordering.cartitem",
+  "pk": 75,
+  "fields": {
+    "user": 5,
+    "food": 7,
+    "order_quantity": 1,
+    "total_amount": "199.00",
+    "created_at": "2026-10-18T20:49:07.509Z",
+    "updated_at": "2026-10-18T20:49:07.509Z"
+  }
+},
+{
+  "model": "food_ordering.cartitem",
+  "pk": 76,
+  "fields": {
+    "user": 5,
+    "food": 24,
+    "order_quantity": 1,
+    "total_amount": "119.00",
+    "created_at": "2026-10-19T14:55:25.627Z",
+    "updated_at": "2026-10-19T14:55:25.627Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 10,
+  "fields": {
+    "user": 5,
+    "order": 67,
+    "food": 14,
+    "order_quantity": 3,
+    "total_amount": "297.00",
+    "created_at": "2026-10-13T09:50:56.266Z",
+    "updated_at": "2026-10-13T09:50:56.266Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 11,
+  "fields": {
+    "user": 5,
+    "order": 68,
+    "food": 8,
+    "order_quantity": 4,
+    "total_amount": "876.00",
+    "created_at": "2026-10-13T18:34:29.150Z",
+    "updated_at": "2026-10-13T18:34:29.150Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 13,
+  "fields": {
+    "user": 5,
+    "order": 89,
+    "food": 14,
+    "order_quantity": 1,
+    "total_amount": "99.00",
+    "created_at": "2026-10-13T20:57:36.418Z",
+    "updated_at": "2026-10-13T20:57:36.424Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 14,
+  "fields": {
+    "user": 5,
+    "order": 89,
+    "food": 7,
+    "order_quantity": 1,
+    "total_amount": "199.00",
+    "created_at": "2026-10-13T20:57:36.433Z",
+    "updated_at": "2026-10-13T20:57:36.438Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 17,
+  "fields": {
+    "user": 5,
+    "order": 89,
+    "food": 8,
+    "order_quantity": 1,
+    "total_amount": "219.00",
+    "created_at": "2026-10-13T20:57:36.464Z",
+    "updated_at": "2026-10-13T20:57:36.467Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 20,
+  "fields": {
+    "user": 5,
+    "order": 90,
+    "food": 13,
+    "order_quantity": 1,
+    "total_amount": "69.00",
+    "created_at": "2026-10-18T11:00:06.294Z",
+    "updated_at": "2026-10-18T11:00:06.302Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 21,
+  "fields": {
+    "user": 5,
+    "order": 90,
+    "food": 17,
+    "order_quantity": 1,
+    "total_amount": "249.00",
+    "created_at": "2026-10-18T11:00:06.315Z",
+    "updated_at": "2026-10-18T11:00:06.321Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 22,
+  "fields": {
+    "user": 5,
+    "order": 90,
+    "food": 33,
+    "order_quantity": 2,
+    "total_amount": "198.00",
+    "created_at": "2026-10-18T11:00:06.329Z",
+    "updated_at": "2026-10-18T11:00:06.334Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 23,
+  "fields": {
+    "user": 5,
+    "order": 90,
+    "food": 12,
+    "order_quantity": 1,
+    "total_amount": "69.00",
+    "created_at": "2026-10-18T11:00:06.342Z",
+    "updated_at": "2026-10-18T11:00:06.347Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 24,
+  "fields": {
+    "user": 5,
+    "order": 91,
+    "food": 10,
+    "order_quantity": 1,
+    "total_amount": "249.00",
+    "created_at": "2026-10-18T13:00:44.239Z",
+    "updated_at": "2026-10-18T13:00:44.241Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 25,
+  "fields": {
+    "user": 5,
+    "order": 92,
+    "food": 36,
+    "order_quantity": 1,
+    "total_amount": "199.00",
+    "created_at": "2026-10-18T13:03:06.164Z",
+    "updated_at": "2026-10-18T13:03:06.168Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 26,
+  "fields": {
+    "user": 5,
+    "order": 93,
+    "food": 10,
+    "order_quantity": 1,
+    "total_amount": "249.00",
+    "created_at": "2026-10-18T13:09:44.021Z",
+    "updated_at": "2026-10-18T13:09:44.024Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 27,
+  "fields": {
+    "user": 5,
+    "order": 94,
+    "food": 4,
+    "order_quantity": 1,
+    "total_amount": "148.00",
+    "created_at": "2026-10-18T13:14:04.941Z",
+    "updated_at": "2026-10-18T13:14:04.944Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 28,
+  "fields": {
+    "user": 5,
+    "order": 95,
+    "food": 34,
+    "order_quantity": 6,
+    "total_amount": "1494.00",
+    "created_at": "2026-10-18T13:16:06.875Z",
+    "updated_at": "2026-10-18T13:16:06.879Z"
+  }
+},
+{
+  "model": "food_ordering.orderitem",
+  "pk": 29,
+  "fields": {
+    "user": 5,
+    "order": 96,
+    "food": 31,
+    "order_quantity": 1,
+    "total_amount": "69.00",
+    "created_at": "2026-10-18T19:20:32.832Z",
+    "updated_at": "2026-10-18T19:20:32.839Z"
+  }
+},
+{
+  "model": "food_ordering.trackorder",
+  "pk": 8,
+  "fields": {
+    "order": 95,
+    "tracking_status": "Preparing",
+    "cancelled_by_user": false,
+    "remark": "order is preparing...",
+    "created_at": "2026-10-18T14:29:48.545Z",
+    "updated_at": "2026-10-18T14:29:48.547Z"
+  }
+},
+{
+  "model": "food_ordering.trackorder",
+  "pk": 9,
+  "fields": {
+    "order": 95,
+    "tracking_status": "Pick Up",
+    "cancelled_by_user": false,
+    "remark": "order is picked up by tthe delivery boy...",
+    "created_at": "2026-10-18T14:33:20.458Z",
+    "updated_at": "2026-10-18T14:33:20.500Z"
+  }
+},
+{
+  "model": "food_ordering.wishlist",
+  "pk": 7,
+  "fields": {
+    "user": 5,
+    "food": 25,
+    "created_at": "2026-10-21T11:03:18.286Z",
+    "updated_at": "2026-10-21T11:03:18.286Z"
+  }
+},
+{
+  "model": "food_ordering.wishlist",
+  "pk": 8,
+  "fields": {
+    "user": 5,
+    "food": 31,
+    "created_at": "2026-10-26T14:53:55.252Z",
+    "updated_at": "2026-10-26T14:53:55.252Z"
+  }
+}
+]

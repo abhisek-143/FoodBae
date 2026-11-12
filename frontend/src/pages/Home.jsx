@@ -29,7 +29,7 @@ const Home = () => {
         setFoods(data);
         setLoading(false);
       });
-  }, [BASE_URL]);
+  }, [BASE_URL,loading]);
 
 
   console.log(foods)

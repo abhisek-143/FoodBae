@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('delivery_address', models.TextField()),
                 ('phone_number', models.CharField(max_length=15)),
                 ('status', models.CharField(choices=[('Pending', 'Pending'), ('Out For Delivery', 'Out For Delivery'), ('Delivered', 'Delivered'), ('Accepted', 'Accepted'), ('Preparing', 'Preparing'), ('Cancelled', 'Cancelled')], default='Pending', max_length=40)),
-                ('payment_option', models.CharField(choices=[('COD', 'Cash On Delivery'), ('Online', 'Online')], default='COD')),
+                ('payment_option', models.CharField(max_length=50)),
                 ('order_quantity', models.PositiveIntegerField(default=1)),
                 ('total_amount', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
