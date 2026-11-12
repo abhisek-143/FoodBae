@@ -6,14 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 const BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
 
 // Always returns a valid URL with exactly one slash between host and path
-const getImageUrl = (path) => {
-  if (!path) return "/placeholder.png"; // put placeholder.png in /public
-  if (/^https?:\/\//i.test(path)) return path; // already a full URL (Cloudinary etc.)
-  return `${BASE_URL}/${path.replace(/^\/+/, "")}`;
-};
 
 const Foodcard = ({ item }) => {
   const navigate = useNavigate();
+  console.log(item)
 
   return (
     <div
@@ -23,7 +19,7 @@ const Foodcard = ({ item }) => {
       <div className="w-45 md:w-55 lg:w-77 rounded shadow-2xl bg-white">
         <img
           className="w-45 md:w-55 lg:w-77 rounded-xl rounded-t-sm h-35 md:h-60 object-cover"
-          src={getImageUrl(item.food_image)}
+          src={`${BASE_URL}/${item.food_image}`}
           alt={item.food_name || "Food image"}
           loading="lazy"
           onError={(e) => {
